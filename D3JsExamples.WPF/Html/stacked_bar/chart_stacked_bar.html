@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
     <meta http-equiv="cache-control" content="no-cache">
     <meta charset="utf-8" />
     <title>Stacked Bars</title>
@@ -98,14 +98,15 @@
         d3.selectAll("input")
             .on("change", changed);
 
-        var timeout = d3.timeout(function () {
-            d3.select("input[value=\"grouped\"]")
-                .property("checked", true)
-                .dispatch("change");
-        }, 2000);
+        // Não funciona bem no Internet Explorer
+        //var timeout = d3.timeout(function () {
+        //    d3.select("input[value=\"grouped\"]")
+        //        .property("checked", true)
+        //        .dispatch("change");
+        //}, 2000);
 
         function changed() {
-            timeout.stop();
+            //timeout.stop(); // Não funciona bem no Internet Explorer
             if (this.value === "grouped") transitionGrouped();
             else transitionStacked();
         }
