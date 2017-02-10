@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Width="1100" Height="700" WindowStartupLocation="CenterScreen">
     <Grid>
-        <WebBrowser x:Name="webBrowserChart" HorizontalAlignment="Center" Margin="10,81,10,0" VerticalAlignment="Top"/>
+        <WebBrowser x:Name="webBrowserChart" HorizontalAlignment="Center" Margin="10,110,10,0" VerticalAlignment="Top" Height="549" Width="1072"/>
+
+        <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="70" Width="531">
+            <RadioButton x:Name="rbStackedBar" Content="Stacked Bar" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+        </GroupBox>
         
-        
-        
-        
-        <Button x:Name="btnStackedBar" Content="Stacked Bars" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="160" Click="btnStackedBar_Click"/>
+        <Button x:Name="btnGerarGrafico" Content="Gerar Gráfico" HorizontalAlignment="Left" Margin="381,85,0,0" VerticalAlignment="Top" Width="160"/>
     </Grid>
 </Window>
