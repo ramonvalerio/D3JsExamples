@@ -1,4 +1,4 @@
-﻿using D3JsExamples.WPF.dto;
+﻿using D3JsExamples.WPF.DTO;
 using Newtonsoft.Json;
 using System;
 using System.IO;
@@ -29,15 +29,16 @@ namespace D3JsExamples.WPF
             if (((bool)rbStackedBar.IsChecked))
             {
                 webBrowserChart.Source = new Uri(string.Format(@"file:///{0}/Html/stacked_bar/chart_stacked_bar.html", Directory.GetCurrentDirectory()));
+                //webBrowserChart.Source = new Uri(string.Format(@"file:///{0}/Html/bar/chart_bar.html", Directory.GetCurrentDirectory()));
             }
         }
 
         private void btnGerarGrafico_Click(object sender, RoutedEventArgs e)
         {
-            string json = JsonConvert.SerializeObject(ChartStackedBarDTO.GetData());
-
             try
             {
+                string json = JsonConvert.SerializeObject(ChartBarDTO.GetData());
+
                 webBrowserChart.InvokeScript("LimparGrafico");
                 webBrowserChart.InvokeScript("GerarGrafico", json);
             }

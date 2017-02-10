@@ -12,7 +12,7 @@
         <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="70" Width="531">
             <RadioButton x:Name="rbStackedBar" Content="Stacked Bar" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
         </GroupBox>
-        
+
         <Button x:Name="btnGerarGrafico" Content="Gerar Gráfico" HorizontalAlignment="Left" Margin="381,85,0,0" VerticalAlignment="Top" Width="160"/>
     </Grid>
 </Window>
