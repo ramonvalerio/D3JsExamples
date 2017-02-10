@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Width="1100" Height="700" WindowStartupLocation="CenterScreen">
     <Grid>
-        <WebBrowser x:Name="webBrowserChar" HorizontalAlignment="Center" Margin="10,81,10,0" VerticalAlignment="Top"/>
+        <WebBrowser x:Name="webBrowserChart" HorizontalAlignment="Center" Margin="10,81,10,0" VerticalAlignment="Top"/>
+        
+        
+        
+        
         <Button x:Name="btnStackedBar" Content="Stacked Bars" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="160" Click="btnStackedBar_Click"/>
     </Grid>
 </Window>

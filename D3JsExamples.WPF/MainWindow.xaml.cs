@@ -11,17 +11,31 @@ namespace D3JsExamples.WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            webBrowserChart.Source = new Uri(string.Format(@"file:///{0}/Html/stacked_bar/chart_stacked_bar.html", Directory.GetCurrentDirectory()));
+            btnStackedBar.IsEnabled = false;
+
+            webBrowserChart.LoadCompleted += WebBrowserChart_LoadCompleted;
+        }
+
+        private void WebBrowserChart_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            btnStackedBar.IsEnabled = true;
         }
 
         private void btnStackedBar_Click(object sender, RoutedEventArgs e)
         {
-            webBrowserChar.Source = new Uri(string.Format(@"file:///{0}/Html/stacked_bar/chart_stacked_bar.html", Directory.GetCurrentDirectory()));
-            //string json = JsonConvert.SerializeObject(ChartStackedBarDTO.GetData());
+            string json = JsonConvert.SerializeObject(ChartStackedBarDTO.GetData());
 
-            //webBrowserChar.InvokeScript("GerarGrafico");
-            //webBrowserChar.InvokeScript("GerarGrafico", "3", "1.123, 2.456, 3.789");
-            //webBrowserChar.InvokeScript("GerarGrafico", json);
-            //webBrowserChar.InvokeScript("ChartJS");
+            try
+            {
+                webBrowserChart.InvokeScript("LimparGrafico");
+                webBrowserChart.InvokeScript("GerarGrafico", json);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
